@@ -13,7 +13,7 @@
 		965A3F361E27DD32006CB020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965A3F351E27DD32006CB020 /* Assets.xcassets */; };
 		965A3F391E27DD32006CB020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965A3F371E27DD32006CB020 /* LaunchScreen.storyboard */; };
 		965A3F441E27DD32006CB020 /* Daily_leetcode_setTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A3F431E27DD32006CB020 /* Daily_leetcode_setTests.swift */; };
-		965A3F4F1E27DD6E006CB020 /* TwoSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A3F4E1E27DD6E006CB020 /* TwoSum.swift */; };
+		9698A1161E285F140060872A /* AlgorithmsSolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698A1151E285F140060872A /* AlgorithmsSolution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		965A3F3F1E27DD32006CB020 /* Daily_leetcode_setTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Daily_leetcode_setTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		965A3F431E27DD32006CB020 /* Daily_leetcode_setTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_leetcode_setTests.swift; sourceTree = "<group>"; };
 		965A3F451E27DD32006CB020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		965A3F4E1E27DD6E006CB020 /* TwoSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSum.swift; sourceTree = "<group>"; };
+		9698A1151E285F140060872A /* AlgorithmsSolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmsSolution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		965A3F2D1E27DD32006CB020 /* Daily_leetcode_set */ = {
 			isa = PBXGroup;
 			children = (
-				965A3F501E27DDC1006CB020 /* TwoSum */,
+				9698A1151E285F140060872A /* AlgorithmsSolution.swift */,
 				965A3F2E1E27DD32006CB020 /* AppDelegate.swift */,
 				965A3F301E27DD32006CB020 /* ViewController.swift */,
 				965A3F321E27DD32006CB020 /* Main.storyboard */,
@@ -97,14 +97,6 @@
 				965A3F451E27DD32006CB020 /* Info.plist */,
 			);
 			path = Daily_leetcode_setTests;
-			sourceTree = "<group>";
-		};
-		965A3F501E27DDC1006CB020 /* TwoSum */ = {
-			isa = PBXGroup;
-			children = (
-				965A3F4E1E27DD6E006CB020 /* TwoSum.swift */,
-			);
-			name = TwoSum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +206,7 @@
 			files = (
 				965A3F311E27DD32006CB020 /* ViewController.swift in Sources */,
 				965A3F2F1E27DD32006CB020 /* AppDelegate.swift in Sources */,
-				965A3F4F1E27DD6E006CB020 /* TwoSum.swift in Sources */,
+				9698A1161E285F140060872A /* AlgorithmsSolution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +345,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZEY359R7A4;
 				INFOPLIST_FILE = Daily_leetcode_set/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coder.Daily-leetcode-set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,6 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZEY359R7A4;
 				INFOPLIST_FILE = Daily_leetcode_set/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coder.Daily-leetcode-set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,6 +416,7 @@
 				965A3F4A1E27DD32006CB020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		965A3F4B1E27DD32006CB020 /* Build configuration list for PBXNativeTarget "Daily_leetcode_setTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +425,7 @@
 				965A3F4D1E27DD32006CB020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
