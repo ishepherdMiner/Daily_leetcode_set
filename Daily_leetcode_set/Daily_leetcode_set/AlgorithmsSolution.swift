@@ -98,7 +98,7 @@ class AlgorithmsSolution: NSObject {
     /*
      * Status: Time Limit Exceeded
      *
-     * Swift 试了好多种,都超时
+     * Swift 试了好多种,改成Swift后都超时
      * http://xfhnever.com/2014/10/30/algorithm-lnrs/ 
      * http://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/
      * http://blog.csdn.net/suool/article/details/38360653
@@ -106,17 +106,18 @@ class AlgorithmsSolution: NSObject {
      * 有用Java写的,有python的,有C++的
      *
      * 题目讨论中的C++方法写的,能通过
-     * 
+     * abcabcbb
      * vector<int> dict(256, -1);
      * int maxLen = 0, start = -1;
      * for (int i = 0; i != s.length(); i++) {
+     *    // 遇到重复字符
      *    if (dict[s[i]] > start)
-     *    start = dict[s[i]];
+     *       start = dict[s[i]];
      *    dict[s[i]] = i;
      *    maxLen = max(maxLen, i - start);
      * }
      * return maxLen;
-     * 移植成Swift还是超时,我只能暂时认为是Swift本身的执行效率原因吧
+     * 移植成Swift还是超时,我暂时认为是Swift本身的执行效率原因吧
      *
      ********************************************************
      * Given a string, find the length of the longest substring without repeating characters.
@@ -142,6 +143,63 @@ class AlgorithmsSolution: NSObject {
             maxLen = maxLen > i - start ? maxLen : i - start
         }
         return maxLen
+    }
+    
+    /*
+     * Status:
+     *
+     ********************************************************
+     There are two sorted arrays nums1 and nums2 of size m and n respectively.
+     
+     Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+     
+     Example 1:
+     nums1 = [1, 3]
+     nums2 = [2]
+     
+     The median is 2.0
+     
+     Example 2:
+     nums1 = [1, 2]
+     nums2 = [3, 4]
+     
+     The median is (2 + 3)/2 = 2.5
+     */
+    func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
+        var nums3 = [Int]()
+        var i = 0
+        var j = 0        
+        let isEven = (nums1.count + nums2.count) % 2 == 0
+        while true {
+            if nums1[i] > nums2[j] {
+                nums3.append(nums2[j])
+                j += 1
+            }else {
+                nums3.append(nums1[i])
+                i += 1
+            }
+            if isEven {
+                // Has error
+                if nums3.count == (n1 + n2) >> 1 {
+                    if nums1[i] > nums2[j] {
+                        nums3.append(nums2[j])
+                        j += 1
+                    }else {
+                        nums3.append(nums1[i])
+                        i += 1
+                    }
+                    let n3 = nums3.count
+                    print(Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5)
+                    return Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5
+                }
+                
+            }else {
+                if nums3.count == ((n1 + n2) >> 1) + 1 {
+                    print(Double(nums3.last!))
+                    return Double(nums3.last!)
+                }
+            }
+        }
     }
 }
 
