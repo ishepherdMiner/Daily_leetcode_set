@@ -168,7 +168,14 @@ class AlgorithmsSolution: NSObject {
     func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
         var nums3 = [Int]()
         var i = 0
-        var j = 0        
+        var j = 0
+        let n1 = nums1.count
+        let n2 = nums2.count
+        
+        if n1 == 0 {
+            
+        }
+        
         let isEven = (nums1.count + nums2.count) % 2 == 0
         while true {
             if nums1[i] > nums2[j] {
@@ -179,8 +186,21 @@ class AlgorithmsSolution: NSObject {
                 i += 1
             }
             if isEven {
-                // Has error
                 if nums3.count == (n1 + n2) >> 1 {
+                    if i == nums3.count {
+                        nums3.append(nums2[j])
+                        let n3 = nums3.count
+                        // print(Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5)
+                        return Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5
+                    }
+                    
+                    if j == nums3.count {
+                        nums3.append(nums1[i])
+                        let n3 = nums3.count
+                        // print(Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5)
+                        return Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5
+                    }
+                    
                     if nums1[i] > nums2[j] {
                         nums3.append(nums2[j])
                         j += 1
@@ -189,13 +209,13 @@ class AlgorithmsSolution: NSObject {
                         i += 1
                     }
                     let n3 = nums3.count
-                    print(Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5)
+                    // print(Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5)
                     return Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5
                 }
                 
             }else {
                 if nums3.count == ((n1 + n2) >> 1) + 1 {
-                    print(Double(nums3.last!))
+                    // print(Double(nums3.last!))
                     return Double(nums3.last!)
                 }
             }
