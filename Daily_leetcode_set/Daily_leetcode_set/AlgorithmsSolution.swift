@@ -148,6 +148,11 @@ class AlgorithmsSolution: NSObject {
     /*
      * Status:
      *
+     * Runtime Error Message:
+     * fatal error: Index out of range
+     * Last executed input:
+     * [2,2,2]
+     * [2,2,2,2]
      ********************************************************
      There are two sorted arrays nums1 and nums2 of size m and n respectively.
      
@@ -173,7 +178,24 @@ class AlgorithmsSolution: NSObject {
         let n2 = nums2.count
         
         if n1 == 0 {
+            if n2 > 1 {
+                return n2 % 2 == 0 ? (Double(nums2[n2 / 2 - 1] + nums2[n2 / 2])) * 0.5 : Double(nums2[n2 / 2])
+            }else if n2 == 1 {
+                return Double(nums2.first!)
+            }else {
+                return 0
+            }
             
+        }
+        
+        if n2 == 0 {
+            if n1 > 1 {
+                return n1 % 2 == 0 ? (Double(nums1[n1 / 2 - 1] + nums1[n1 / 2])) * 0.5 : Double(nums1[n1 / 2])
+            }else if n1 == 1 {
+                return Double(nums1.first!)
+            }else {
+                return 0
+            }
         }
         
         let isEven = (nums1.count + nums2.count) % 2 == 0
