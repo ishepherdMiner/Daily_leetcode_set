@@ -177,6 +177,25 @@ class AlgorithmsSolution: NSObject {
         let n1 = nums1.count
         let n2 = nums2.count
         
+        if nums1[n1 - 1] > nums2[n2 - 1] {
+            nums1.forEach({ (v) in
+                
+            })
+        }else {
+            nums2.forEach({ (v) in
+            })
+        }
+        
+        let isEven = (n1 + n2) % 2 == 0
+        
+        let n3 = nums3.count
+        
+        if isEven {
+            return Double(nums3[n3 / 2 - 1] + nums3[n3 / 2]) * 0.5
+        }else {
+            return Double(nums3[n3 / 2]) * 0.5
+        }
+        /*
         if n1 == 0 {
             if n2 > 1 {
                 return n2 % 2 == 0 ? (Double(nums2[n2 / 2 - 1] + nums2[n2 / 2])) * 0.5 : Double(nums2[n2 / 2])
@@ -184,8 +203,7 @@ class AlgorithmsSolution: NSObject {
                 return Double(nums2.first!)
             }else {
                 return 0
-            }
-            
+            }            
         }
         
         if n2 == 0 {
@@ -199,49 +217,96 @@ class AlgorithmsSolution: NSObject {
         }
         
         let isEven = (nums1.count + nums2.count) % 2 == 0
+        
+
+        
         while true {
             if nums1[i] > nums2[j] {
-                nums3.append(nums2[j])
-                j += 1
+                if j < n2 - 1 {
+                    nums3.append(nums2[j])
+                    j += 1
+                }else if j == n2 - 1{
+                    // 到nums2的最后一个
+                    nums3.append(nums2[j])
+                }else {
+                    if i <= n1 - 1 {
+                        nums3.append(nums1[i])
+                        i += 1
+                    }
+                }
             }else {
-                nums3.append(nums1[i])
-                i += 1
+                if i < n1 - 1 {
+                    nums3.append(nums1[i])
+                    i += 1
+                }else if i == n1 - 1 {
+                    nums3.append(nums1[i])
+                }else {
+                    if j <= n2 - 1 {
+                        nums3.append(nums2[j])
+                        j += 1
+                    }
+                }
             }
+            
+            
+            
             if isEven {
                 if nums3.count == (n1 + n2) >> 1 {
-                    if i == nums3.count {
+                    
+                    if i == 0 && j == 0 {
+                        return Double(nums1[0] + nums2[0]) * 0.5
+                    }
+                    
+                    if i == nums3.count - 1 {
                         nums3.append(nums2[j])
                         let n3 = nums3.count
-                        // print(Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5)
                         return Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5
                     }
                     
-                    if j == nums3.count {
+                    if j == nums3.count - 1 {
                         nums3.append(nums1[i])
                         let n3 = nums3.count
-                        // print(Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5)
                         return Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5
                     }
                     
                     if nums1[i] > nums2[j] {
-                        nums3.append(nums2[j])
-                        j += 1
+                        if j < n2 - 1 {
+                            nums3.append(nums2[j])
+                            j += 1
+                        }else if j == n2 - 1{
+                            // 到nums2的最后一个
+                            nums3.append(nums2[j])
+                        }else {
+                            if i <= n1 - 1 {
+                                nums3.append(nums1[i])
+                                i += 1
+                            }
+                        }
                     }else {
-                        nums3.append(nums1[i])
-                        i += 1
+                        if i < n1 - 1 {
+                            nums3.append(nums1[i])
+                            i += 1
+                        }else if i == n1 - 1 {
+                            nums3.append(nums1[i])
+                        }else {
+                            if j <= n2 - 1 {
+                                nums3.append(nums2[j])
+                                j += 1
+                            }
+                        }
                     }
                     let n3 = nums3.count
-                    // print(Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5)
                     return Double(nums3[n3 - 1] + nums3[n3 - 2]) * 0.5
                 }
                 
             }else {
                 if nums3.count == ((n1 + n2) >> 1) + 1 {
-                    // print(Double(nums3.last!))
                     return Double(nums3.last!)
                 }
             }
+ 
         }
+ */
     }
 }
 
